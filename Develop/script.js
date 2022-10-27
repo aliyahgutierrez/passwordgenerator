@@ -80,6 +80,24 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
 
+// Creating Variables that will be used in the prompts 
+var amountNumbers;
+var specialCharacters;
+var upperCase;
+var lowerCase;
+var answer;
+
+
+// Numbers 
+var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// Special characters
+var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+// Upper 
+var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// lower
+var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// a variable that will be used to add the various selections/ criteria chosen by use
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -91,26 +109,50 @@ function generatePassword() {
   // - Passowrd length between 8-128 Char 
   // - lower, uppper, numbers, special 
 
-// have and outter var for input after getting password length 
+  // have and outter var for input after getting password length 
 
 
+  // Seires of Prompts 
 
-
+  // Password Length 
   var charLength = parseInt(prompt("Pick a number between 8-128 for password length?"));
-while (charLength < 8 || charLength > 128 ){
-  charLength = parseInt(prompt("Please select a length between 8-128"));
-    return charLength = alert("Please input correct value");
-  // }
-}
-  console.log("we're getting somewhere")
+  while (charLength < 8 || charLength > 128) {
+    charLength = parseInt(prompt("Please select a length between 8-128"));
+  }
+  if (charLength === true) {
 
-  
+    // the remainder of the prompts 
+  } else {
+    amountNumbers = confirm("Will this contain Numbers?");
+    console.log(" numbers " + number)
+  }
+  specialCharacters = confirm("will this contain special characters?");
+  console.log("special characters " + character)
+
+  {
+    upperCase = confirm("Will this contain upper case letters?");
+    console.log("upper case " + upperLetters)
+  }
+  {
+    lowerCase = confirm("Will this contain Numbers? ");
+    console.log("lower case " + lowerLetters)
+
+  };
+
   // 2. Validate the input 
+  // If chose none on all the critera create
+  while (!answer){
+    if ( answer !== 'number' && answer !== 'character' && answer !== 'upperLetters' && answer !== ' lowerLetters'){
+      answer = alert("Please enter at least one criteria");
+    }
+  }
+
+
+  // return charLength = alert("Please input correct value")
 
   // 3. generate password based on input
 
   // 4. Display the generated password 
-
 
 
   // this is where the password will be 
