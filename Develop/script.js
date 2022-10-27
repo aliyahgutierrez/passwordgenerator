@@ -134,7 +134,7 @@ function generatePassword() {
     console.log("upper case " + upperLetters)
   }
   {
-    lowerCase = confirm("Will this contain Numbers? ");
+    lowerCase = confirm("Will this contain lower letters? ");
     console.log("lower case " + lowerLetters)
 
   };
@@ -143,12 +143,13 @@ function generatePassword() {
   // If chose none on all the critera create
   while (!answer){
     if ( answer !== 'number' && answer !== 'character' && answer !== 'upperLetters' && answer !== ' lowerLetters'){
-      answer = alert("Please enter at least one criteria");
     }
+    return charLength = alert("Please input correct value");
+
   }
 
 
-  // return charLength = alert("Please input correct value")
+  return charLength = alert("Please input correct value")
 
   // 3. generate password based on input
 
