@@ -90,14 +90,20 @@ function generatePassword() {
   // 1. create the series of prompts for
   // - Passowrd length between 8-128 Char 
   // - lower, uppper, numbers, special 
-  var charLength = parseInt(prompt("Pick a number between 1-128 for password length?"));
-  if (charLength < 8 || charLength > 128) {
-    return charLength = parseInt(prompt("Please select a length between 8-128"));
-  } else if (charLength < 8 || charLength > 128) {
-    return charLength = prompt("Please input correct value");
-  }
+
+// have and outter var for input after getting password length 
+
+
+
+
+  var charLength = parseInt(prompt("Pick a number between 8-128 for password length?"));
+while (charLength < 8 || charLength > 128 ){
+  charLength = parseInt(prompt("Please select a length between 8-128"));
+    return charLength = alert("Please input correct value");
+  // }
+}
   console.log("we're getting somewhere")
-  
+
   
   // 2. Validate the input 
 
