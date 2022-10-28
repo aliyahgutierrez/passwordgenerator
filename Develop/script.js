@@ -1,80 +1,3 @@
-// // Assignment code here
-// var generateBtn = document.querySelector("#generate");
-
-// // Creating Variables that will be used in the prompts 
-// var answer;
-// var amountNumbers;
-// var specialCharacters;
-// var upperCase;
-// var lowerCase;
-
-// // Numbers 
-// var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-// // Special characters
-// var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
-// // Upper and lower case letters
-// var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// var upperLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-// // a variable that will be used to add the various selections/ criteria chosen by user
-
-
-// // creating the first prompt of questions
-// function userPrompts(){
-
-//   // prompts, alerts, and confirm
-//   var charLength = parseInt(prompt("How many chracters would you like between 8-126?"));
-//   // check the length that the user answers ... conditional (if statement)
-
-// // booleans for other criteria
-//   var hasNumbers = confirm("Do you want numbers in your password?");
-//   var hasUpper = confirm("Do you want upper case letters in your password?");
-//   var hasLower = confirm("Do you want lower case letters in your password?");
-
-
-// var storageObject = {
-//   charLength: charLength,
-//   hasNumbers: hasNumbers,
-//   hasUpper: hasUpper,
-//   hasLower: hasLower
-// }
-
-// return storageObject;
-
-
-// } 
-
-// function randomGen() {
-//   var randIndex = Math.floor(Math.random())
-// }
-
-// function finalPassword() {
-//   var answer = userPrompts(), {
-//     if(!charLength);{
-//       alert("Required Value");
-//     }
-
-
-
-
-// userPrompts();
-
-
-
-// first numbers 
-
-// then chracters 
-
-// then upper 
-
-// then lower 
-
-// store the answers somewhere somehow 
-
-// create the for loop 
-
-// a function that randomly selects  charcters and puts them together 
-
-// concacting and pushing the selected arrays to create a random array 
 
 
 // Assignment code here
@@ -87,16 +10,36 @@ var upperCase;
 var lowerCase;
 var answer;
 
+var passwordArr = []
+var availableChar = []
 
 // Numbers 
 var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // Special characters
-var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 // Upper 
 var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // lower
 var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 // a variable that will be used to add the various selections/ criteria chosen by use
+
+function getChar() {
+  amountNumbers = confirm("Will this contain Numbers?");
+  console.log(" numbers " + number)
+
+  specialCharacters = confirm("will this contain special characters?");
+  console.log("special characters " + character)
+
+
+  upperCase = confirm("Will this contain upper case letters?");
+  console.log("upper case " + upperLetters)
+
+
+  lowerCase = confirm("Will this contain lower? ");
+  console.log("lower case " + lowerLetters)
+
+
+}
 
 
 // Get references to the #generate element
@@ -119,46 +62,95 @@ function generatePassword() {
   while (charLength < 8 || charLength > 128) {
     charLength = parseInt(prompt("Please select a length between 8-128"));
   }
-  if (charLength === true) {
 
-    // the remainder of the prompts 
-  } else {
-    amountNumbers = confirm("Will this contain Numbers?");
-    console.log(" numbers " + number)
-  }
-  specialCharacters = confirm("will this contain special characters?");
-  console.log("special characters " + character)
+  while (true) {
+    getChar();
+    console.log(amountNumbers, specialCharacters, upperCase, lowerCase)
 
-  {
-    upperCase = confirm("Will this contain upper case letters?");
-    console.log("upper case " + upperLetters)
-  }
-  {
-    lowerCase = confirm("Will this contain lower letters? ");
-    console.log("lower case " + lowerLetters)
-
-  };
-
-  // 2. Validate the input 
-  // If chose none on all the critera create
-  while (!answer){
-    if ( answer !== 'number' && answer !== 'character' && answer !== 'upperLetters' && answer !== ' lowerLetters'){
+    if (amountNumbers || specialCharacters || upperCase || lowerCase) {
+      break
+    } else {
+      alert("Please input correct value")
     }
-    return charLength = alert("Please input correct value");
-
   }
+
+  console.log(amountNumbers, specialCharacters, upperCase, lowerCase)
+
+
 
 
   return charLength = alert("Please input correct value")
 
-  // 3. generate password based on input
+  function getChar() {
+    if (amountNumbers) {
+    }
+    if (specialCharacters) {
+      var randomCharacters = "*";
+      passwordArr.push(randomCharacters);
+      answer++;
+      availableChar.concat(character)
+    }
+    if (upperCase) {
 
-  // 4. Display the generated password 
+    }
+    if (lowerCase) {
+      var randomLower = "x"
+      passwordArr.push(randomLower);
+      answer++;
+      availableChar.concat(lowerLetters);
 
+    }
 
-  // this is where the password will be 
-  return "Genertated Password will go here"
+    for (i = 0; i < passwordArr - answer; i++) {
+      var genChar = '@';
+      passwordArr.push(genChar);
+
+      console.log(genChar);
+    }
+    return "Genertated Password will go here"
+  }
 }
+//  insure one of each is requested type is in the paswword   
+//  check if amount numbers is true 
+// if true get reandom number 
+// push random number to password array type
+// reduce password length by one ( represent remainding characters needed for password)
+
+//  check if amount specialChar  is true 
+// if true get reandom specialChar 
+// push specialChar number to password array type
+// reduce password length by one ( represent remainding characters needed for password)
+
+//  check if amount upper is true 
+// if true get reandom upper 
+// push random upper to password array type
+// reduce password length by one ( represent remainding characters needed for password)
+
+//  check if amount lower is true 
+// if true get reandom lower 
+// push random lower to password array type
+// reduce password length by one ( represent remainding characters needed for password)
+
+// create for loop to get the random char for reaminding password length 
+//  for(i = 0; i < charLength; i++){
+//   console.log("tacos")
+//  }
+
+
+
+// remaining of length of the password were going to loop and get random charcters add it to the passowrd list
+
+
+
+
+// 3. generate password based on input
+
+// 4. Display the generated password 
+
+
+// this is where the password will be 
+//   return "Genertated Password will go here"
+// 
 
 // Write password to the #password input
 function writePassword() {
