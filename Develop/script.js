@@ -81,7 +81,7 @@ function generatePassword() {
 
   // return charLength = alert("Please input correct value")
 
-  function getChar() {
+ {
     if (amountNumbers) {
     var randomNumber = " y";
     passwordArr.push(randomNumber);
@@ -96,7 +96,7 @@ function generatePassword() {
     }
     if (upperCase) {
       var upperWord = "w";
-      passwordArr.push(upperCase);
+      passwordArr.push(upperWord);
       answer++;
       availableChar.concat(upperLetters)
 
@@ -113,7 +113,7 @@ function generatePassword() {
       var genChar = '@';
       passwordArr.push(genChar);
 
-      console.log(genChar);
+      console.log(answer);
     }
   }
 }
