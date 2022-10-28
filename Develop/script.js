@@ -79,10 +79,14 @@ function generatePassword() {
 
 
 
-  return charLength = alert("Please input correct value")
+  // return charLength = alert("Please input correct value")
 
   function getChar() {
     if (amountNumbers) {
+    var randomNumber = " y";
+    passwordArr.push(randomNumber);
+    answer ++;
+    availableChar.concat(number)
     }
     if (specialCharacters) {
       var randomCharacters = "*";
@@ -91,6 +95,10 @@ function generatePassword() {
       availableChar.concat(character)
     }
     if (upperCase) {
+      var upperWord = "w";
+      passwordArr.push(upperCase);
+      answer++;
+      availableChar.concat(upperLetters)
 
     }
     if (lowerCase) {
@@ -107,7 +115,6 @@ function generatePassword() {
 
       console.log(genChar);
     }
-    return "Genertated Password will go here"
   }
 }
 //  insure one of each is requested type is in the paswword   
