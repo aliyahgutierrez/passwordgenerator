@@ -70,10 +70,24 @@ function generatePassword() {
   var possChar = []
   var finalChar = []
 
+  if(getUserChar.amountNumbers){
+    poss = possChar.concat(number)
+    finalChar.push(randomChar(number))
+  }
   if (getUserChar.specialCharacters){
 possChar = possChar.concat(character)
 finalChar.push(randomChar(character))
   }
+  if (getUserChar.upperCase){
+    possChar = possChar.concat(upperCase)
+    finalChar.push(randomChar(upperCase))
+  }
+  
+  if (getUserChar.lowerCase){
+    possChar = possChar.concat(lowerLetters)
+    finalChar.push(randomChar(lowerLetters))
+  }
+  
 for (i=0; i<getUserChar.length; i++) {
   var possChar = randomChar(possChar)
   concats.push(possChar);
